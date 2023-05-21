@@ -123,7 +123,7 @@ void nv3052c_reg_init(void)
     gpio_set_level(GPIO_LCD_RST, 0);
     vTaskDelay(pdMS_TO_TICKS(50));
     gpio_set_level(GPIO_LCD_RST, 1);
-    vTaskDelay(pdMS_TO_TICKS(120));
+    vTaskDelay(pdMS_TO_TICKS(120)); 
 
     spi_write_reg(0xFF,0x30);
     spi_write_reg(0xFF,0x52);
@@ -140,6 +140,8 @@ void nv3052c_reg_init(void)
     spi_write_reg(0x0C,0x32);
     spi_write_reg(0x0D,0x0B);
     spi_write_reg(0x0E,0x00);
+
+    spi_write_reg(0x23,0x10);//add 这里不确定
 
     spi_write_reg(0x24,0x10);
     spi_write_reg(0x25,0x0a);		 
@@ -373,7 +375,7 @@ void nv3052c_reg_init(void)
     spi_write_reg(0xFF,0x00);
     spi_write_reg(0x36,0x0A);
 
-    spi_write_reg(0x3A,0x55);//add for 16bitRGB
+    spi_write_reg(0x3A,0x50);//add for 16bitRGB
 
     spi_write_reg(0x11,0x00);
     vTaskDelay(pdMS_TO_TICKS(200));

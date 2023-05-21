@@ -87,8 +87,8 @@ esp_err_t bsp_lcd_init(void)
     // lcd_clear_fast(panel_handle, COLOR_GREEN);
     // lcd_clear_fast(panel_handle, COLOR_BLUE);
     // lcd_clear_fast(panel_handle, COLOR_BLACK);
-    // while (1)
-    // {  
+     while (1)
+     {  
         lcd_clear(panel_handle, COLOR_WHITE);
         vTaskDelay(pdMS_TO_TICKS(2000));
         lcd_clear(panel_handle, COLOR_RED);
@@ -99,7 +99,7 @@ esp_err_t bsp_lcd_init(void)
         vTaskDelay(pdMS_TO_TICKS(2000));
         lcd_clear(panel_handle, COLOR_BLACK);
         vTaskDelay(pdMS_TO_TICKS(2000));
-    // }
+     }
     //lcd_draw_picture_test(panel_handle);
 
     return ESP_OK;

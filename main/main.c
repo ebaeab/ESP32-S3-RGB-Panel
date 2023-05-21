@@ -25,8 +25,6 @@ void app_main(void)
     /* Initialize I2C 400KHz */
     //ESP_ERROR_CHECK(bsp_i2c_init(I2C_NUM_0, 400000));
     /* LCD init */
-    ESP_LOGI(TAG, "sss%ld",pdMS_TO_TICKS(100));
-    
     ESP_ERROR_CHECK(bsp_lcd_init());
 
     /* Touch IC init */
