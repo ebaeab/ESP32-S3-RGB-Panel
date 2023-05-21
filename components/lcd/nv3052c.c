@@ -77,9 +77,9 @@ static void spi_soft_write_9bits(uint16_t data)
 	//LCD_CS_Clr();
 	for(i = 0; i < 9; i++)
 	{
-        LCD_SCK_Clr();
-		if(data & 0x100)   LCD_SDA_Set();
+        if(data & 0x100)   LCD_SDA_Set();
 		else               LCD_SDA_Clr();
+        LCD_SCK_Clr();
         LCD_SCK_Set();
 		data <<= 1;
 	}
@@ -112,6 +112,18 @@ void nv3052c_reg_init(void)
 {
     spi_soft_init();   //GPIO init
     ESP_LOGI(TAG, "nv3052c register init");
+
+    gpio_config_t io_conf1 = {
+        .mode = GPIO_MODE_OUTPUT,
+        .pin_bit_mask = 1ULL << GPIO_LCD_RST, 
+    };
+    gpio_config(&io_conf1);
+    gpio_set_level(GPIO_LCD_RST, 1);
+    vTaskDelay(pdMS_TO_TICKS(20));
+    gpio_set_level(GPIO_LCD_RST, 0);
+    vTaskDelay(pdMS_TO_TICKS(50));
+    gpio_set_level(GPIO_LCD_RST, 1);
+    vTaskDelay(pdMS_TO_TICKS(120));
 
     spi_write_reg(0xFF,0x30);
     spi_write_reg(0xFF,0x52);

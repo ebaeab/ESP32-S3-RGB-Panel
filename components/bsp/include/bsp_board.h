@@ -13,12 +13,12 @@
 #define LCD_HEIGHT      (1424)
 
 #define GPIO_LCD_BL     (GPIO_NUM_15)//
-#define GPIO_LCD_RST    (GPIO_NUM_NC)
+#define GPIO_LCD_RST    (GPIO_NUM_17)//
 #define GPIO_LCD_CS     (GPIO_NUM_16)//
 #define GPIO_LCD_SDA    (GPIO_NUM_19)//
 #define GPIO_LCD_SCK    (GPIO_NUM_20)//
 
-#define GPIO_LCD_DE     (GPIO_NUM_17)//
+//#define GPIO_LCD_DE     (GPIO_NUM_17)//
 #define GPIO_LCD_VSYNC  (GPIO_NUM_3)//
 #define GPIO_LCD_HSYNC  (GPIO_NUM_46)//
 #define GPIO_LCD_PCLK   (GPIO_NUM_9)//

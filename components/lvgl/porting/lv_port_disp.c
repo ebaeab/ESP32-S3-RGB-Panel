@@ -60,7 +60,7 @@ void lv_port_disp_init(void)
         .pclk_gpio_num = GPIO_LCD_PCLK,
         .vsync_gpio_num = GPIO_LCD_VSYNC,
         .hsync_gpio_num = GPIO_LCD_HSYNC,
-        .de_gpio_num = GPIO_LCD_DE,
+        .de_gpio_num = GPIO_NUM_NC,
         .data_gpio_nums = {
             GPIO_LCD_B0, GPIO_LCD_B1, GPIO_LCD_B2, GPIO_LCD_B3, GPIO_LCD_B4,         
             GPIO_LCD_G0, GPIO_LCD_G1, GPIO_LCD_G2, GPIO_LCD_G3, GPIO_LCD_G4, GPIO_LCD_G5,
