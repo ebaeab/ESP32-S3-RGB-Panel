@@ -1,5 +1,5 @@
-#ifndef _ST7701_H_
-#define _ST7701_H_
+#ifndef _nv3052c_H_
+#define _nv3052c_H_
 
 #include <stdlib.h>
 #include "freertos/FreeRTOS.h"
@@ -20,7 +20,7 @@
 #define LCD_SDA_Set()   gpio_set_level(GPIO_LCD_SDA, 1)
 
 
-void st7701_reg_init(void);
+void nv3052c_reg_init(void);
 
 #endif
 

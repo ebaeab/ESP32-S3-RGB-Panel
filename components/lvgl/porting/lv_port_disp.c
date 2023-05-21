@@ -42,7 +42,7 @@ void lv_port_disp_init(void)
 {
     static lv_disp_drv_t disp_drv;      // contains callback functions
 
-    st7701_reg_init();      // st7701 register config
+    nv3052c_reg_init();   
 
     gpio_config_t bk_gpio_config = {
         .mode = GPIO_MODE_OUTPUT,

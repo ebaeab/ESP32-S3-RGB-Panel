@@ -25,7 +25,7 @@ esp_err_t pwm_init(void)
     };
     mcpwm_init(MCPWM_UNIT_0, MCPWM_TIMER_0, &pwm_config);
 
-    ESP_LOGI(TAG, "pwm init freq=%dHz duty=%.1f%%", pwm_config.frequency, pwm_config.cmpr_a);
+    ESP_LOGI(TAG, "pwm init freq=%ldHz duty=%.1f%%", pwm_config.frequency, pwm_config.cmpr_a);
 
     return ESP_OK;
 }

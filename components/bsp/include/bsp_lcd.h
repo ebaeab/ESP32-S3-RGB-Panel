@@ -41,7 +41,7 @@
 #include "esp_lcd_panel_ops.h"
 
 #include "bsp_board.h"
-#include "st7701.h"
+#include "nv3052c.h"
 
 #ifdef __cplusplus
 extern "C" {

@@ -30,7 +30,7 @@ esp_err_t bsp_lcd_init(void)
 {
     ESP_LOGI(TAG, "bsp_lcd_init start");
 
-    st7701_reg_init();     // st7701 register config
+    nv3052c_reg_init(); 
 
     gpio_config_t bk_gpio_config = {
         .mode = GPIO_MODE_OUTPUT,
@@ -48,23 +48,23 @@ esp_err_t bsp_lcd_init(void)
         .pclk_gpio_num = GPIO_LCD_PCLK,
         .vsync_gpio_num = GPIO_LCD_VSYNC,
         .hsync_gpio_num = GPIO_LCD_HSYNC,
-        .de_gpio_num = GPIO_LCD_DE,
+        .de_gpio_num = GPIO_NUM_NC,//GPIO_LCD_DE,
         .data_gpio_nums = {
             GPIO_LCD_B0, GPIO_LCD_B1, GPIO_LCD_B2, GPIO_LCD_B3, GPIO_LCD_B4,         
             GPIO_LCD_G0, GPIO_LCD_G1, GPIO_LCD_G2, GPIO_LCD_G3, GPIO_LCD_G4, GPIO_LCD_G5,
             GPIO_LCD_R0, GPIO_LCD_R1, GPIO_LCD_R2, GPIO_LCD_R3, GPIO_LCD_R4,
         },
         .timings = {
-            .pclk_hz = 10 * 1000 * 1000,
+            .pclk_hz = 57 * 1000 * 1000,
             .h_res = LCD_WIDTH,
             .v_res = LCD_HEIGHT,
             // The following parameters should refer to LCD spec
-            .hsync_back_porch = 50,
-            .hsync_front_porch = 10,
-            .hsync_pulse_width = 8,
-            .vsync_back_porch = 20,
-            .vsync_front_porch = 10,
-            .vsync_pulse_width = 8,
+            .hsync_back_porch = 42,
+            .hsync_front_porch = 44,
+            .hsync_pulse_width = 12,
+            .vsync_back_porch = 14,
+            .vsync_front_porch = 16,
+            .vsync_pulse_width = 4,
             .flags.pclk_active_neg = 0,  // RGB data is clocked out on falling edge
         },
         .flags.fb_in_psram = 1, // allocate frame buffer in PSRAM
@@ -76,15 +76,15 @@ esp_err_t bsp_lcd_init(void)
     ESP_ERROR_CHECK(esp_lcd_panel_reset(panel_handle));
     ESP_ERROR_CHECK(esp_lcd_panel_init(panel_handle));
     // esp_lcd_panel_invert_color(panel_handle, true);
-    // esp_lcd_panel_swap_xy(lcd_panel, true);
-    // esp_lcd_panel_mirror(lcd_panel, true, false);
+    //esp_lcd_panel_swap_xy(panel_handle, true);
+    //esp_lcd_panel_mirror(panel_handle, true, false);
 
     ESP_LOGI(TAG, "Turn on LCD backlight");
     gpio_set_level(GPIO_LCD_BL, 1);
 
-    lcd_clear_fast(panel_handle, COLOR_WHITE);
+    //lcd_clear_fast(panel_handle, COLOR_WHITE);
     // lcd_clear_fast(panel_handle, COLOR_RED);
-    // lcd_clear_fast(panel_handle, COLOR_GREEN);
+    // lcd_clear(panel_handle, COLOR_GREEN);
     // lcd_clear_fast(panel_handle, COLOR_BLUE);
     // lcd_clear_fast(panel_handle, COLOR_BLACK);
     // while (1)
