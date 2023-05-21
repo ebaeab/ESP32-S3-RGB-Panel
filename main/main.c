@@ -25,6 +25,13 @@ void app_main(void)
     /* Initialize I2C 400KHz */
     //ESP_ERROR_CHECK(bsp_i2c_init(I2C_NUM_0, 400000));
     /* LCD init */
+    gpio_config_t io_conf1 = {
+        .mode = GPIO_MODE_OUTPUT,
+        .pin_bit_mask = 1ULL << GPIO_LCD_DE, 
+    };
+    gpio_config(&io_conf1);
+    gpio_set_level(GPIO_LCD_DE, 1);
+
     ESP_ERROR_CHECK(bsp_lcd_init());
 
     /* Touch IC init */

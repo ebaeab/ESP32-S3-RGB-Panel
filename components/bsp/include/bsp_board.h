@@ -18,7 +18,7 @@
 #define GPIO_LCD_SDA    (GPIO_NUM_19)//
 #define GPIO_LCD_SCK    (GPIO_NUM_20)//
 
-#define GPIO_LCD_DE     (GPIO_NUM_18)
+#define GPIO_LCD_DE     (GPIO_NUM_17)//
 #define GPIO_LCD_VSYNC  (GPIO_NUM_3)//
 #define GPIO_LCD_HSYNC  (GPIO_NUM_46)//
 #define GPIO_LCD_PCLK   (GPIO_NUM_9)//

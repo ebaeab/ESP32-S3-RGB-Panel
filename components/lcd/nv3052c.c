@@ -129,7 +129,6 @@ void nv3052c_reg_init(void)
     spi_write_reg(0x0D,0x0B);
     spi_write_reg(0x0E,0x00);
 
-    //spi_write_reg(0x23,0x10);//add
     spi_write_reg(0x24,0x10);
     spi_write_reg(0x25,0x0a);		 
                             
