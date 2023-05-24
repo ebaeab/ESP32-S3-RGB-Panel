@@ -55,15 +55,15 @@ esp_err_t bsp_lcd_init(void)
             GPIO_LCD_R0, GPIO_LCD_R1, GPIO_LCD_R2, GPIO_LCD_R3, GPIO_LCD_R4,
         },
         .timings = {
-            .pclk_hz = 57 * 1000 * 1000,
+            .pclk_hz = 20 * 1000 * 1000,
             .h_res = LCD_WIDTH,
             .v_res = LCD_HEIGHT,
             // The following parameters should refer to LCD spec
-            .hsync_back_porch = 30,
-            .hsync_front_porch = 24,
+            .hsync_back_porch = 18,
+            .hsync_front_porch = 20,
             .hsync_pulse_width = 2,
-            .vsync_back_porch = 8,
-            .vsync_front_porch = 16,
+            .vsync_back_porch = 4,
+            .vsync_front_porch = 2,
             .vsync_pulse_width = 2,
             .flags.pclk_active_neg = 0,  // RGB data is clocked out on falling edge
         },

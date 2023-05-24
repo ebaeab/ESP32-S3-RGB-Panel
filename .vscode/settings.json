@@ -4,7 +4,11 @@
         "interface/ftdi/esp32_devkitj_v1.cfg",
         "target/esp32s3.cfg"
     ],
-    "idf.portWin": "COM6",
+    "idf.portWin": "COM5",
     "idf.flashType": "UART",
-    "cmake.configureOnOpen": false
+    "cmake.configureOnOpen": false,
+    "files.associations": {
+        "nv3052c.h": "c",
+        "bsp_board.h": "c"
+    }
 }

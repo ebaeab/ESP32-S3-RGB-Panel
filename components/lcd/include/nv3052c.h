@@ -2,6 +2,7 @@
 #define _nv3052c_H_
 
 #include <stdlib.h>
+#include <string.h> 
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 
@@ -9,6 +10,9 @@
 #include "esp_check.h"
 
 #include "driver/gpio.h"
+
+#include "driver/spi_common.h"
+#include "driver/spi_master.h"
 #include "bsp_board.h"
 
 

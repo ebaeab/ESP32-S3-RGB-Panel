@@ -9,7 +9,7 @@
  * 
  */
 #define FUNC_LCD_EN     (1)
-#define LCD_WIDTH       (600)
+#define LCD_WIDTH       (800)
 #define LCD_HEIGHT      (1424)
 
 #define GPIO_LCD_BL     (GPIO_NUM_15)//
